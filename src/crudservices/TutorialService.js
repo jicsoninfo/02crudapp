@@ -7,7 +7,9 @@ const getAll = () => {
 };
 
 const get = id => {
-  return http.get(`/tutorials/${id}`);
+  //return http.get(`/tutorials/${id}`);
+  //console.log(id);
+  return http.get(`/tutorialsgetdatabyid/?id=${id}`);
 };
 
 const create = data => {
@@ -27,7 +29,8 @@ const remove = id => {
 };
 
 const removeAll = () => {
-  return http.delete(`/tutorials`);
+  //return http.delete(`/tutorials`);
+  return http.post(`/tutorialsdeletealldata`);
 };
 
 const findByTitle = title => {

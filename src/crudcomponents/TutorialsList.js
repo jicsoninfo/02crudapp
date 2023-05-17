@@ -45,7 +45,7 @@ const TutorialList=() =>{
         TutorialDataService.findByTitle(searchTitle)
         .then(response => {
             setTutorials(response.data.data);
-            console.log(response.data.data);
+            console.log(response.data.data); 
         }).catch(e=>{
             console.log(e);
         });
@@ -111,7 +111,7 @@ const TutorialList=() =>{
                         <label><strong>Status:</strong></label>
                         {" "}{ currentTutorial.published ? "Published":"Pending" }
                     </div>
-                    <Link className="badge badge-warning" to={"/tutorials/" + currentTutorial.id}>
+                    <Link className="badge badge-success" to={"/tutorials/" + currentTutorial.id}>
                         Edit
                     </Link>
                 </div>
