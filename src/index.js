@@ -20,3 +20,17 @@ ReactDOM.render(
 );
 
 ServiceWorker.unregister();
+
+
+// git status
+//git add .
+//git commit "update"
+//git commit
+//git push
+//git status
+//git add .
+//git commit -m
+//git commit -m "message"
+//git -b
+//git branch
+//git push origin master
