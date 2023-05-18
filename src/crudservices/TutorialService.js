@@ -21,11 +21,14 @@ const create = data => {
 };
 
 const update = (id, data) => {
-  return http.put(`/tutorials/${id}`, data);
+  //return http.put(`/tutorials/${id}`, data);
+  return http.post(`/tutorialsupdate/?id=${id}`, data);
+  
 };
 
 const remove = id => {
-  return http.delete(`/tutorials/${id}`);
+  //return http.delete(`/tutorials/${id}`);
+  return http.get(`/tutorialsdestroy/?id=${id}`);
 };
 
 const removeAll = () => {

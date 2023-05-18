@@ -41,6 +41,7 @@ const Tutorial=props => {
             description: currentTutorial.description,
             published: status
         };
+        //console.log(data);
         TutorialService.update(currentTutorial.id, data)
         .then(response => {
             setCurrentTutorial({...currentTutorial, published:status});
@@ -50,6 +51,27 @@ const Tutorial=props => {
             console.log(e);
         });
     };
+
+    const updateTutorial = () => {
+        TutorialService.update(currentTutorial.id, currentTutorial)
+        .then(response =>{
+            console.log(response.data);
+            setMessage("The Tutorial was updated successfully!");
+        }).catch(e=>{
+            console.log(e);
+        });
+    };
+
+    const deleteTutorial = () => {
+        TutorialService.remove(currentTutorial.id)
+        .then(response => {
+            console.log(response.data);
+            navigate("/tutorials");
+        })
+        .catch(e=>{
+            console.log(e);
+        })
+    }
     
     return(
         <div>
@@ -103,12 +125,14 @@ const Tutorial=props => {
 
                 <button
                     className="badge bg-danger me-2"
+                    onClick={deleteTutorial}
                 >
                 Delete</button>
 
                 <button
                     type="submit"
                     className="badge bg-success"
+                    onClick={updateTutorial}
                 >Update</button>
                 <p>{message}</p>
             </div>

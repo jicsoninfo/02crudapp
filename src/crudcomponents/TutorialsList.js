@@ -111,7 +111,7 @@ const TutorialList=() =>{
                         <label><strong>Status:</strong></label>
                         {" "}{ currentTutorial.published ? "Published":"Pending" }
                     </div>
-                    <Link className="badge badge-success" to={"/tutorials/" + currentTutorial.id}>
+                    <Link className="badge bg-success" to={"/tutorials/" + currentTutorial.id}>
                         Edit
                     </Link>
                 </div>
