@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import Crudapp from './Crudapp';
 import './index.css';
 
@@ -12,14 +12,21 @@ import {BrowserRouter} from "react-router-dom";
 //   return "Helllo World ................"
 // }
 
-ReactDOM.render(
+// ReactDOM.render(
+//   <BrowserRouter>
+//     <Crudapp />
+//   </BrowserRouter>,
+//   document.getElementById('root')
+// );
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <BrowserRouter>
-    <Crudapp />
-  </BrowserRouter>,
-  document.getElementById('root')
+     <Crudapp />
+   </BrowserRouter>
 );
 
-ServiceWorker.unregister();
+//ServiceWorker.unregister();
 
 
 // git status
